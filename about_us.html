@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNORYX | About Us</title>
+    <!-- Load Tailwind CSS via CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for stylized icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Load Cyberpunk Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+        
+        :root {
+            --neon-green: #34d399; /* emerald-400 */
+            --neon-blue: #22d3ee; /* cyan-400 */
+            --dark-bg: #0a0a0a;
+            --mid-bg: #1f2937;
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: var(--dark-bg);
+            color: #e5e7eb; /* Light gray text */
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background (Circuit lines) */
+        .cyberpunk-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px; 
+            animation: grid-pulse 10s infinite alternate;
+            z-index: -1; 
+            opacity: 0.1; 
+        }
+
+        @keyframes grid-pulse {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* Neon Glow Effect */
+        .neon-glow-green {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px rgba(52, 211, 153, 0.5), 0 0 15px rgba(52, 211, 153, 0.4);
+        }
+
+        .neon-glow-blue {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px rgba(34, 211, 238, 0.5), 0 0 15px rgba(34, 211, 238, 0.4);
+        }
+
+        /* Stylized Card & Section */
+        .data-segment {
+            background-color: #111827; /* Darker blue-gray */
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+        }
+
+        /* Back Button Style */
+        .back-button {
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 0.5rem;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            box-shadow: 0 0 15px var(--neon-green);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- CYBERPUNK ANIMATED BACKGROUND --><div class="cyberpunk-grid"></div>
+
+    <!-- HEADER / NAVIGATION --><header class="p-6 bg-gray-900/50 sticky top-0 z-10 border-b border-gray-700">
+        <div class="container mx-auto flex justify-between items-center">
+            
+            <!-- BACK BUTTON -->
+            <a href="landing_page.html" class="back-button flex items-center px-4 py-2 bg-gray-800 text-gray-300 hover:text-white border border-gray-600 hover:border-emerald-400">
+                <i class="fas fa-arrow-left mr-2 neon-glow-green"></i> RETURN TO NEXUS
+            </a>
+
+            <!-- TITLE -->
+            <h1 class="text-3xl font-bold neon-glow-blue" style="font-family: 'Orbitron', sans-serif;">
+                // TECHNORYX ARCHIVE
+            </h1>
+        </div>
+    </header>
+    
+    <!-- MAIN CONTENT AREA --><main class="container mx-auto p-4 sm:p-8 pt-10">
+        
+        <h2 class="text-center text-5xl mb-12 font-bold uppercase" style="font-family: 'Orbitron', sans-serif;">
+            TRANSMISSION LOG: <span class="neon-glow-green">ABOUT US</span>
+        </h2>
+
+        <!-- SECTION 1: CLUB HISTORY AND MISSION -->
+        <section class="data-segment mb-12 max-w-5xl mx-auto">
+            <h3 class="text-3xl font-bold mb-6 text-center neon-glow-blue">
+                [ Code || Collaborate || Conquer]
+            </h3>
+            
+            <p class="mb-4 text-lg border-l-4 border-emerald-400 pl-4">
+We're not a club; we're a launchpad. The [Your Club Name] is a highly charged zone of excitement and discovery, designed to turn raw curiosity into polished expertise. We reject the rigid, isolated classroom model. Our space is built on electric collaboration and unfiltered communication, ensuring that no member's question is left in the dark.
+
+Here, learning is an adventure. We cultivate a vibrant, supportive culture where asking "how" is encouraged, and doubt-solving is our collective priority. Join us to find your niche, sharpen your edge, and grow within a community that makes the mastery of technology genuinely rewarding and fun.            </p>
+            
+            
+            <p class="text-gray-400 italic">
+                "We don't just study the future; we compile it." - Technoryx Operating Principle 1.1
+            </p>
+        </section>
+
+        <!-- SECTION 2: PHOTO GALLERY (ARCHIVES) -->
+        <section class="mb-12">
+            <h3 class="text-3xl font-bold mb-8 text-center neon-glow-green" style="font-family: 'Orbitron', sans-serif;">
+                /// FIELD ARCHIVES 
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Photo 1: Event/Hackathon -->
+                <div class="data-segment p-3 hover:shadow-cyan-400/50">
+                    <img src="https://placehold.co/800x600/1e40af/ffffff?text=Hackathon+2025" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/1e40af/ffffff?text=HACK+EVENT'"
+                         class="w-full h-48 object-cover rounded-md mb-3 border border-cyan-400 shadow-lg" alt="Club Hackathon Event">
+                    <p class="text-sm text-center neon-glow-blue">Investiture Ceremony</p>
+                </div>
+
+                <!-- Photo 2: Team Collaboration -->
+                <div class="data-segment p-3 hover:shadow-cyan-400/50">
+                    <img src="https://placehold.co/800x600/4c0000/ffffff?text=Team+Session" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/4c0000/ffffff?text=TEAM+COLLABORATION'"
+                         class="w-full h-48 object-cover rounded-md mb-3 border border-cyan-400 shadow-lg" alt="Team planning session">
+                    <p class="text-sm text-center neon-glow-blue">Elysium - Chapter 01</p>
+                </div>
+
+                <!-- Photo 3: Workshop/Presentation -->
+                <div class="data-segment p-3 hover:shadow-cyan-400/50">
+                    <img src="https://placehold.co/800x600/365314/ffffff?text=Workshop" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/365314/ffffff?text=CODING+WORKSHOP'"
+                         class="w-full h-48 object-cover rounded-md mb-3 border border-cyan-400 shadow-lg" alt="Coding Workshop">
+                    <p class="text-sm text-center neon-glow-blue">Classes</p>
+                </div>
+                
+                <!-- Photo 4: Members/Group Photo -->
+                <div class="data-segment p-3 hover:shadow-cyan-400/50 md:col-span-3">
+                    <img src="https://placehold.co/1200x400/1f2937/ffffff?text=TECHNORYX+FULL+SQUAD" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/1200x400/1f2937/ffffff?text=CLUB+MEMBERS+GROUP+PHOTO'"
+                         class="w-full h-48 object-cover rounded-md mb-3 border border-cyan-400 shadow-lg" alt="Full club group photo">
+                    <p class="text-sm text-center neon-glow-blue">The Full System Unit (2025 Cycle)</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
