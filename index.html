@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNORYX | Initializing...</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family for a modern, digital feel -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        /* Apply global cyberpunk styling */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d; /* Very dark background */
+        }
+        
+        /* Custom neon flicker animation for the text */
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 4px #10b981, /* base color (emerald-500) */
+                    0 0 11px #10b981,
+                    0 0 19px #10b981,
+                    0 0 40px #065f46, /* darker internal glow */
+                    0 0 80px #065f46;
+                color: #34d399; /* lighter color for text fill */
+            }
+            20%, 24%, 55% {
+                text-shadow: none; /* occasional complete blackout/flicker */
+                color: #0d0d0d;
+            }
+        }
+
+        .neon-text {
+            animation: neon-flicker 2s ease-in-out infinite alternate;
+        }
+
+        /* Glitch effect for the subtitle */
+        @keyframes glitch-effect {
+            0% { transform: translate(1px, -1px); opacity: 0.8; }
+            20% { transform: translate(-1px, 2px); opacity: 0.9; }
+            40% { transform: translate(3px, 0px); opacity: 0.8; }
+            60% { transform: translate(-2px, -3px); opacity: 0.9; }
+            80% { transform: translate(1px, 1px); opacity: 0.8; }
+            100% { transform: translate(0, 0); opacity: 1; }
+        }
+
+        .glitch-subtitle {
+            animation: glitch-effect 0.1s infinite alternate;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="text-center p-6 bg-gray-900/50 rounded-xl shadow-2xl transition duration-500 hover:shadow-emerald-500/50">
+        
+        <!-- Main Club Name -->
+        <h1 id="club-name" 
+            class="neon-text text-6xl sm:text-7xl lg:text-9xl font-bold tracking-widest uppercase mb-4 cursor-pointer">
+            TECHNORYX
+        </h1>
+        
+        <!-- Loading Indicator / Subtitle -->
+        <p class="text-sm sm:text-base text-gray-400 opacity-75 glitch-subtitle">
+            ACCESS PROTOCOL INITIATED...
+        </p>
+
+    </div>
+
+    <script>
+        // --- MANDATORY EDITING SECTION ---
+        /**
+         * IMPORTANT: Change this value to the actual file name of your next page (the landing page).
+         * Example: "index.html", "main.html", or "home.html".
+         */
+        const NEXT_PAGE_FILENAME = "landing_page.html"; 
+        // ---------------------------------
+        
+        const REDIRECT_DELAY_MS = 5000; // 5000 milliseconds = 5 seconds
+
+        function initiateRedirection() {
+            console.log(`Splash screen visible. Redirecting to ${NEXT_PAGE_FILENAME} in ${REDIRECT_DELAY_MS / 1000} seconds...`);
+            
+            // Set the timeout for redirection
+            setTimeout(() => {
+                window.location.href = NEXT_PAGE_FILENAME;
+            }, REDIRECT_DELAY_MS);
+        }
+
+        // Start the process when the page loads
+        window.onload = initiateRedirection;
+
+        // Simple exponential backoff implementation for demonstration (not strictly needed for a single API call like this, but good practice)
+        function base64ToArrayBuffer(base64) {
+            // Placeholder utility function for potential future audio/image processing
+            console.log("Utility base64ToArrayBuffer called.");
+        }
+
+        function pcmToWav(pcmData, sampleRate) {
+            // Placeholder utility function for potential future audio processing
+            console.log("Utility pcmToWav called.");
+        }
+    </script>
+
+</body>
+</html>
